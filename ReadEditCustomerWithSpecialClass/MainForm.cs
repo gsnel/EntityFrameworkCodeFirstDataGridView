@@ -166,11 +166,15 @@ namespace ReadEditCustomerWithSpecialClass
             CountyNameColumn.ValueMember = "CountryIdentifier";
             CountyNameColumn.DataPropertyName = "CountryIdentifier";
             CountyNameColumn.DataSource = _operations.GetCountries();
+            // uncomment will not show a ComboBox on each column
+            //CountyNameColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             ContactTitleColumn.DisplayMember = "ContactTitle";
             ContactTitleColumn.ValueMember = "ContactTypeIdentifier";
             ContactTitleColumn.DataPropertyName = "ContactTypeIdentifier";
             ContactTitleColumn.DataSource = _operations.GetContactTypes();
+            // uncomment will not show a ComboBox on each column
+            //ContactTitleColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             /*
              * Assign list of customers to the BindingSource which then
