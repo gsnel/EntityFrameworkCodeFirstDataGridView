@@ -49,6 +49,7 @@
     <Compile Include="Helpers\EntityValidator.cs" />
     <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="LanguageExtensions\ObjectExtensions.cs" />
+    <Compile Include="LanguageExtensions\StringExtensions.cs" />
     <Compile Include="LanguageExtensions\ValidatorExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
