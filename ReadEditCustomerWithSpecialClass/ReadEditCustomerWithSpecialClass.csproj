@@ -60,11 +60,18 @@
   <ItemGroup>
     <Compile Include="Classes\CueBannerTextCode.cs" />
     <Compile Include="Classes\Dialogs.cs" />
-    <Compile Include="ContactSelectionForm.cs">
+    <Compile Include="Classes\WaterMark.cs" />
+    <Compile Include="Forms\ContactSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContactSelectionForm.Designer.cs">
+    <Compile Include="Forms\ContactSelectionForm.Designer.cs">
       <DependentUpon>ContactSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerEditorForm.Designer.cs">
+      <DependentUpon>CustomerEditorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LanguageExtensions\StringExtensions.cs" />
     <Compile Include="MainForm.cs">
@@ -77,8 +84,11 @@
     <Compile Include="LanguageExtensions\DataGridViewExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ContactSelectionForm.resx">
+    <EmbeddedResource Include="Forms\ContactSelectionForm.resx">
       <DependentUpon>ContactSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerEditorForm.resx">
+      <DependentUpon>CustomerEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

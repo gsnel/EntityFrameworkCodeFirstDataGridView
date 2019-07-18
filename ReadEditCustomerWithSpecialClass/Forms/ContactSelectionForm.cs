@@ -4,12 +4,13 @@ using System.Windows.Forms;
 using NorthWindDataLibrary;
 using NorthWindDataLibrary.Classes;
 
-namespace ReadEditCustomerWithSpecialClass
+namespace ReadEditCustomerWithSpecialClass.Forms
 {
     public partial class ContactSelectionForm : Form
     {
         public Contact Contact;
         private int? _contactIdentifier;
+        // ReSharper disable once PossibleInvalidOperationException
         public int ContactIdentifier => _contactIdentifier.Value;
         public ContactSelectionForm()
         {

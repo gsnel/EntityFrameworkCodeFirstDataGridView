@@ -13,6 +13,7 @@ using Equin.ApplicationFramework;
 using NorthWindDataLibrary;
 using NorthWindDataLibrary.Classes;
 using ReadEditCustomerWithSpecialClass.Classes;
+using ReadEditCustomerWithSpecialClass.Forms;
 using ReadEditCustomerWithSpecialClass.LanguageExtensions;
 using static ReadEditCustomerWithSpecialClass.Classes.Dialogs;
 
@@ -364,7 +365,7 @@ namespace ReadEditCustomerWithSpecialClass
         /// <param name="e"></param>
         private void bindingNavigatorAddNewCustomer_Click(object sender, EventArgs e)
         {
-
+            // will be in second part of this series
         }
         private void toolStripButtonFindCustomer_Click(object sender, EventArgs e)
         {
@@ -376,6 +377,7 @@ namespace ReadEditCustomerWithSpecialClass
 
             e.SuppressKeyPress = true;
             FilterCompanyName();
+
         }
         /// <summary>
         /// Perform filter for
@@ -427,6 +429,18 @@ namespace ReadEditCustomerWithSpecialClass
 
             }
         }
-
+        /// <summary>
+        /// Edit current customer in dialog window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void gridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.Handled = true;
+                MessageBox.Show("TODO: Edit current customer");
+            }
+        }
     }
 }

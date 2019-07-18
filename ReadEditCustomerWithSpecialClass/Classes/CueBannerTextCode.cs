@@ -33,10 +33,10 @@ namespace ReadEditCustomerWithSpecialClass.Classes
 
             if (control is ComboBox)
             {
-                var Edit_hWnd = FindWindowEx(control.Handle, IntPtr.Zero, "Edit", null);
-                if (!(Edit_hWnd == IntPtr.Zero))
+                var editHWnd = FindWindowEx(control.Handle, IntPtr.Zero, "Edit", null);
+                if (!(editHWnd == IntPtr.Zero))
                 {
-                    SendMessage(Edit_hWnd, EM_SETCUEBANNER, 0, text);
+                    SendMessage(editHWnd, EM_SETCUEBANNER, 0, text);
                 }
             }
             else if (control is TextBox)
@@ -58,10 +58,10 @@ namespace ReadEditCustomerWithSpecialClass.Classes
 
             if (control is ComboBox)
             {
-                IntPtr Edit_hWnd = FindWindowEx(control.Handle, IntPtr.Zero, "Edit", null);
-                if (!(Edit_hWnd == IntPtr.Zero))
+                var editHWnd = FindWindowEx(control.Handle, IntPtr.Zero, "Edit", null);
+                if (!(editHWnd == IntPtr.Zero))
                 {
-                    SendMessage(Edit_hWnd, EM_SETCUEBANNER, (int)value, text);
+                    SendMessage(editHWnd, EM_SETCUEBANNER, (int)value, text);
                 }
             }
             else if (control is TextBox)
@@ -70,12 +70,5 @@ namespace ReadEditCustomerWithSpecialClass.Classes
             }
         }
 
-    }
-    public enum WaterMark
-    {
-        // Hide cue text when entering control
-        Hide = 0,
-        // Show cue text when entering control until user begins to type
-        Show = 1
     }
 }

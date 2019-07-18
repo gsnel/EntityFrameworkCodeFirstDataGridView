@@ -1,4 +1,4 @@
-﻿namespace ReadEditCustomerWithSpecialClass
+﻿namespace ReadEditCustomerWithSpecialClass.Forms
 {
     partial class ContactSelectionForm
     {
