@@ -61,6 +61,12 @@
     <Compile Include="Classes\CueBannerTextCode.cs" />
     <Compile Include="Classes\Dialogs.cs" />
     <Compile Include="Classes\WaterMark.cs" />
+    <Compile Include="Forms\ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ContactSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="LanguageExtensions\DataGridViewExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ContactSelectionForm.resx">
       <DependentUpon>ContactSelectionForm.cs</DependentUpon>
     </EmbeddedResource>

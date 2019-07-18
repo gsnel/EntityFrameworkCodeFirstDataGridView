@@ -10,5 +10,9 @@ namespace NorthWindDataLibrary
     {
         public int? CountryIdentifier { get;  set; }
         public string CountyName { get;  set; }
+        public override string ToString()
+        {
+            return CountyName;
+        }
     }
 }

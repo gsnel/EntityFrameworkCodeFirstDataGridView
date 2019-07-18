@@ -171,15 +171,15 @@ namespace ReadEditCustomerWithSpecialClass
             CountyNameColumn.ValueMember = "CountryIdentifier";
             CountyNameColumn.DataPropertyName = "CountryIdentifier";
             CountyNameColumn.DataSource = _operations.GetCountries();
-            // uncomment will not show a ComboBox on each column
-            //CountyNameColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+            // comment to show the combobox on each row
+            CountyNameColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             ContactTitleColumn.DisplayMember = "ContactTitle";
             ContactTitleColumn.ValueMember = "ContactTypeIdentifier";
             ContactTitleColumn.DataPropertyName = "ContactTypeIdentifier";
             ContactTitleColumn.DataSource = _operations.GetContactTypes();
-            // uncomment will not show a ComboBox on each column
-            //ContactTitleColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+            // comment to show the combobox on each row
+            ContactTitleColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             /*
              * Assign list of customers to the BindingSource which then
@@ -439,7 +439,25 @@ namespace ReadEditCustomerWithSpecialClass
             if (e.KeyData == Keys.Enter)
             {
                 e.Handled = true;
-                MessageBox.Show("TODO: Edit current customer");
+
+                var countries = _operations.GetCountries();
+                countries.Insert(0, new CountryItem() {CountryIdentifier = 0, CountyName = "Select"});
+
+                var contactTitles = _operations.GetContactTypes();
+                contactTitles.Insert(0, new ContactType() { ContactTypeIdentifier = 0, ContactTitle = "Select" });
+
+                var f = new CustomerEditorForm(countries, contactTitles);
+                try
+                {
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        
+                    }
+                }
+                finally
+                {
+                    f.Dispose();
+                }
             }
         }
     }
