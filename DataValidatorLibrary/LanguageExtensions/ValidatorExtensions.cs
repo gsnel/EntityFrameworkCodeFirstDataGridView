@@ -6,7 +6,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DataValidatorLibrary.Helpers;
-using LanguageExtensionsLibrary;
+using ReadEditCustomerWithSpecialClass.LanguageExtensions;
+
 
 namespace DataValidatorLibrary.LanguageExtensions
 {

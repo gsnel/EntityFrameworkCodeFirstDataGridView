@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Equin.ApplicationFramework;
 using NorthWindDataLibrary;
 using NorthWindDataLibrary.Classes;
+using ReadEditCustomerWithSpecialClass.Classes;
 using ReadEditCustomerWithSpecialClass.LanguageExtensions;
 using static ReadEditCustomerWithSpecialClass.Classes.Dialogs;
 
@@ -153,6 +154,9 @@ namespace ReadEditCustomerWithSpecialClass
         /// <param name="e"></param>
         private void Form1_Shown(object sender, EventArgs e)
         {
+
+            CompanyLikeToolStripTextBox.TextBox.SetCueText("Filter condition");
+
             gridView.EditingControlShowing += DataGridView1_EditingControlShowing;
 
             gridView.AutoGenerateColumns = false;
@@ -192,6 +196,8 @@ namespace ReadEditCustomerWithSpecialClass
             contactTypes.Insert(0, new ContactType() { ContactTypeIdentifier = 0, ContactTitle = "All"});
             ContactTypeComboBox.DataSource = contactTypes;
             ContactTypeComboBox.DisplayMember = "ContactTitle";
+
+            CompanyNameConditiontoolStripComboBox.SelectedIndex = 1;
 
         }
         /// <summary>
@@ -360,15 +366,48 @@ namespace ReadEditCustomerWithSpecialClass
         {
 
         }
-        /// <summary>
-        /// Example of a like condition on company name
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void toolStripButtonFindCustomer_Click(object sender, EventArgs e)
         {
-            _customersView.ApplyFilter(customer => customer.CompanyName.Contains("suey"));
+            FilterCompanyName();
         }
+        private void CompanyLikeToolStripTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+
+            e.SuppressKeyPress = true;
+            FilterCompanyName();
+        }
+        /// <summary>
+        /// Perform filter for
+        ///     Starts with
+        ///     Ends with
+        ///     Contains
+        /// * Case sensitive
+        /// </summary>
+        private void FilterCompanyName()
+        {
+            if (string.IsNullOrWhiteSpace(CompanyLikeToolStripTextBox.Text))
+            {
+                _customersView.Filter = null;
+            }
+            else
+            {
+                if (CompanyNameConditiontoolStripComboBox.Text == "Starts with")
+                {
+                    _customersView.ApplyFilter(customer => customer.CompanyName.StartsWith(CompanyLikeToolStripTextBox.Text));
+                }
+                else if (CompanyNameConditiontoolStripComboBox.Text == "Ends with")
+                {
+                    _customersView.ApplyFilter(customer => customer.CompanyName.EndsWith(CompanyLikeToolStripTextBox.Text));
+                }
+                else if (CompanyNameConditiontoolStripComboBox.Text == "Contains")
+                {
+                    _customersView.ApplyFilter(customer => customer.CompanyName.Contains(CompanyLikeToolStripTextBox.Text));
+                }
+
+            }
+        }
+
         /// <summary>
         /// Example of a filter on an exact type, in this case contact type
         /// </summary>

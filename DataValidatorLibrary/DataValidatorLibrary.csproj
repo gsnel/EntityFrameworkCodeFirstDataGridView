@@ -53,9 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LanguageExtensionsLibrary\LanguageExtensionsLibrary.csproj">
-      <Project>{7F93F525-1ED4-4842-B8A0-AB1CB0D06EA8}</Project>
-      <Name>LanguageExtensionsLibrary</Name>
+    <ProjectReference Include="..\ReadEditCustomerWithSpecialClass\ReadEditCustomerWithSpecialClass.csproj">
+      <Project>{94D10EC7-7984-4204-A392-3E5413982B57}</Project>
+      <Name>ReadEditCustomerWithSpecialClass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

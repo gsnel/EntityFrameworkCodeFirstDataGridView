@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.FilterByContactTypeButton = new System.Windows.Forms.Button();
+            this.ContactTypeComboBox = new System.Windows.Forms.ComboBox();
             this.SaveAllChangesButton = new System.Windows.Forms.Button();
             this.gridView = new System.Windows.Forms.DataGridView();
             this.CompanyNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,8 +57,10 @@
             this.bindingNavigatorAddNewCustomer = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteCustomer = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFindCustomer = new System.Windows.Forms.ToolStripButton();
-            this.ContactTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.FilterByContactTypeButton = new System.Windows.Forms.Button();
+            this.CompanyLikeToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.CompanyNameConditiontoolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -73,6 +77,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1074, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // FilterByContactTypeButton
+            // 
+            this.FilterByContactTypeButton.Location = new System.Drawing.Point(908, 15);
+            this.FilterByContactTypeButton.Name = "FilterByContactTypeButton";
+            this.FilterByContactTypeButton.Size = new System.Drawing.Size(154, 23);
+            this.FilterByContactTypeButton.TabIndex = 4;
+            this.FilterByContactTypeButton.Text = "Filter by contact type";
+            this.FilterByContactTypeButton.UseVisualStyleBackColor = true;
+            this.FilterByContactTypeButton.Click += new System.EventHandler(this.FilterByContactTypeButton_Click);
+            // 
+            // ContactTypeComboBox
+            // 
+            this.ContactTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ContactTypeComboBox.FormattingEnabled = true;
+            this.ContactTypeComboBox.Location = new System.Drawing.Point(729, 15);
+            this.ContactTypeComboBox.Name = "ContactTypeComboBox";
+            this.ContactTypeComboBox.Size = new System.Drawing.Size(173, 21);
+            this.ContactTypeComboBox.TabIndex = 3;
             // 
             // SaveAllChangesButton
             // 
@@ -183,6 +206,10 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewCustomer,
             this.bindingNavigatorDeleteCustomer,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.CompanyLikeToolStripTextBox,
+            this.CompanyNameConditiontoolStripComboBox,
             this.toolStripButtonFindCustomer});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -292,24 +319,32 @@
             this.toolStripButtonFindCustomer.Text = "toolStripButton1";
             this.toolStripButtonFindCustomer.Click += new System.EventHandler(this.toolStripButtonFindCustomer_Click);
             // 
-            // ContactTypeComboBox
+            // CompanyLikeToolStripTextBox
             // 
-            this.ContactTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ContactTypeComboBox.FormattingEnabled = true;
-            this.ContactTypeComboBox.Location = new System.Drawing.Point(729, 15);
-            this.ContactTypeComboBox.Name = "ContactTypeComboBox";
-            this.ContactTypeComboBox.Size = new System.Drawing.Size(173, 21);
-            this.ContactTypeComboBox.TabIndex = 3;
+            this.CompanyLikeToolStripTextBox.Name = "CompanyLikeToolStripTextBox";
+            this.CompanyLikeToolStripTextBox.Size = new System.Drawing.Size(150, 25);
+            this.CompanyLikeToolStripTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CompanyLikeToolStripTextBox_KeyDown);
             // 
-            // FilterByContactTypeButton
+            // CompanyNameConditiontoolStripComboBox
             // 
-            this.FilterByContactTypeButton.Location = new System.Drawing.Point(908, 15);
-            this.FilterByContactTypeButton.Name = "FilterByContactTypeButton";
-            this.FilterByContactTypeButton.Size = new System.Drawing.Size(154, 23);
-            this.FilterByContactTypeButton.TabIndex = 4;
-            this.FilterByContactTypeButton.Text = "Filter by contact type";
-            this.FilterByContactTypeButton.UseVisualStyleBackColor = true;
-            this.FilterByContactTypeButton.Click += new System.EventHandler(this.FilterByContactTypeButton_Click);
+            this.CompanyNameConditiontoolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CompanyNameConditiontoolStripComboBox.Items.AddRange(new object[] {
+            "Starts with",
+            "Contains",
+            "Ends with"});
+            this.CompanyNameConditiontoolStripComboBox.Name = "CompanyNameConditiontoolStripComboBox";
+            this.CompanyNameConditiontoolStripComboBox.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(59, 22);
+            this.toolStripLabel1.Text = "Company";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // MainForm
             // 
@@ -361,6 +396,10 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonFindCustomer;
         private System.Windows.Forms.ComboBox ContactTypeComboBox;
         private System.Windows.Forms.Button FilterByContactTypeButton;
+        private System.Windows.Forms.ToolStripTextBox CompanyLikeToolStripTextBox;
+        private System.Windows.Forms.ToolStripComboBox CompanyNameConditiontoolStripComboBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 
