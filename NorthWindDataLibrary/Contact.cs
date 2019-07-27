@@ -20,6 +20,9 @@ namespace NorthWindDataLibrary
 
         public string LastName { get; set; }
 
+        [NotMapped]
+        public string FullName => $"{FirstName} {LastName}";
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }
     }

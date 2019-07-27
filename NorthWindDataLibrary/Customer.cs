@@ -11,8 +11,7 @@ namespace NorthWindDataLibrary
         [Key]
         public int CustomerIdentifier { get; set; }
 
-        [Required]
-        [StringLength(40)]
+        [Required, StringLength(40)]
         public string CompanyName { get; set; }
 
         [StringLength(30)]
