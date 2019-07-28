@@ -19,3 +19,4 @@ Code within this repository is a work in progress, all code present has been tes
 - [SSMS](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) (SQL-Server Management Studio) optional
 
 ### Article location
+[Windows forms Entity Framework Code first from database](https://social.technet.microsoft.com/wiki/contents/articles/53154.windows-forms-entity-framework-code-first-from-database.aspx)
